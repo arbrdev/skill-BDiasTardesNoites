@@ -14,6 +14,8 @@
 
 from mycroft.skills import MycroftSkill, intent_handler
 from mycroft.skills.audioservice import AudioService
+from mycroft.util import play_mp3
+    AudioService = None
 
 
 class BdiasTardesNoitesSkill(MycroftSkill):
@@ -30,7 +32,7 @@ class BdiasTardesNoitesSkill(MycroftSkill):
         self.speak_dialog("BoasNoites")
         
     @intent_handler("PonCCRadio.intent")
-    def handle_boas_noites_intent(self, message):   
+    def handle_pon_ccradio_intent(self, message):   
         self.audioservice.play(self.settings['https://radioserver02.ccradio.es/radio/8000/radio.mp3'])
 
    # @intent_handler("WhoAreYou.intent")
