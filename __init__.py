@@ -13,6 +13,7 @@
 # limitations under the License.
 
 from mycroft.skills import MycroftSkill, intent_handler
+from mycroft.skills.audioservice import AudioService
 
 
 class BdiasTardesNoitesSkill(MycroftSkill):
@@ -27,6 +28,10 @@ class BdiasTardesNoitesSkill(MycroftSkill):
     @intent_handler("BoasNoites.intent")
     def handle_boas_noites_intent(self, message):
         self.speak_dialog("BoasNoites")
+        
+    @intent_handler("PonCCRadio.intent")
+    def handle_boas_noites_intent(self, message):   
+        self.audioservice.play(self.settings['https://radioserver02.ccradio.es/radio/8000/radio.mp3'])
 
    # @intent_handler("WhoAreYou.intent")
    # def handle_who_are_you_intent(self, message):
