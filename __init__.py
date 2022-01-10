@@ -22,7 +22,7 @@ class BdiasTardesNoitesSkill(MycroftSkill):
 
     @intent_handler("BoasTardes.intent")
     def handle_boas_tardes_intent(self, message):
-        self.speak_dialog("BoasTardes.dialog")
+        self.speak_dialog("Boas tardes")
 
     @intent_handler("BoasNoites.intent")
     def handle_boas_noites_intent(self, message):
