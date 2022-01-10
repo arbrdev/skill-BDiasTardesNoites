@@ -13,9 +13,6 @@
 # limitations under the License.
 
 from mycroft.skills import MycroftSkill, intent_handler
-from mycroft.skills.audioservice import AudioService
-from mycroft.util import play_mp3
-    AudioService = None
 
 
 class BdiasTardesNoitesSkill(MycroftSkill):
@@ -31,29 +28,5 @@ class BdiasTardesNoitesSkill(MycroftSkill):
     def handle_boas_noites_intent(self, message):
         self.speak_dialog("BoasNoites")
         
-    @intent_handler("PonCCRadio.intent")
-    def handle_pon_ccradio_intent(self, message):   
-        self.audioservice.play(self.settings['https://radioserver02.ccradio.es/radio/8000/radio.mp3'])
-
-   # @intent_handler("WhoAreYou.intent")
-   # def handle_who_are_you_intent(self, message):
-   #     name = self.config_core.get("listener", {}).get("wake_word",
-   #                                                     "mycroft")
-   #     name = name.lower().replace("hey ", "")
-   #     self.speak_dialog("who.am.i", {"name": name})
-   #  
-   # @intent_handler("WhatAreYou.intent")
-   # def handle_what_are_you_intent(self, message):
-   #     self.speak_dialog("what.am.i")
-   #
-   # @intent_handler("DoYouRhyme.intent")
-   # def handle_do_you_rhyme(self, message):
-   #     self.speak_dialog("tell.a.rhyme")
-   #
-   # @intent_handler("DoYouDream.intent")
-   # def handle_do_you_dream(self, message):
-   #     self.speak_dialog("dream")
-   #
-
 def create_skill():
     return BdiasTardesNoitesSkill()
