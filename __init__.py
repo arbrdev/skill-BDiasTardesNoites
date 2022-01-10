@@ -18,15 +18,15 @@ from mycroft.skills import MycroftSkill, intent_handler
 class BdiasTardesNoitesSkill(MycroftSkill):
     @intent_handler("BosDias.intent")
     def handle_bos_dias_intent(self, message):
-        self.speak_dialog("BosDias.dialog")
+        self.speak_dialog("BosDias")
 
     @intent_handler("BoasTardes.intent")
     def handle_boas_tardes_intent(self, message):
-        self.speak_dialog("Boas tardes")
+        self.speak_dialog("BoasTardes")
 
     @intent_handler("BoasNoites.intent")
     def handle_boas_noites_intent(self, message):
-        self.speak_dialog("BoasNoites.dialog")
+        self.speak_dialog("BoasNoites")
 
    # @intent_handler("WhoAreYou.intent")
    # def handle_who_are_you_intent(self, message):
